@@ -3,11 +3,43 @@
 
 <head>
 
- gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'analytics_storage': 'denied'
+ <script>
+// Define dataLayer and the gtag function.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Default ad_storage to 'denied' as a placeholder
+// Determine actual values based on your own requirements
+gtag('consent', 'default', {
+  'ad_storage': 'denied'
 });
- 
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+  gtag('config', 'TAG_ID');
+</script>
+
+<!-- Update this section based on your business requirements. -->
+<script>
+  function consentGranted() {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted'
+    });
+  }
+</script>
+
+<body>
+  ...
+  <button onclick="consentGranted">Yes</button>
+  ...
+</body>
+
  <!-- Google Tag Manager -->
 <script> (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
